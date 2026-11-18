@@ -11,7 +11,8 @@ public class Application {
     public static void main(String[] args) {
       ApplicationContext applicationContext=new AnnotationConfigApplicationContext(Application.class);
         IMetier metier=applicationContext.getBean(IMetier.class);
+        System.out.println(metier.getClass().getName());
         metier.process();
-        System.out.println(metier.compute());
+        System.out.println("Result: "+metier.compute());
     }
 }
