@@ -15,7 +15,7 @@ public class LogAspect {
 
     Logger logger=Logger.getLogger(LogAspect.class.getName());
 
-    @Around("execution(* net.zoungrana.services..*(..))")
+    @Around("@annotation(net.zoungrana.aspects.Log)")
     public Object log(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         long t1=System.currentTimeMillis();
         logger.info("------------------------------------------------------------------------");
